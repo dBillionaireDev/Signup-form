@@ -63,6 +63,20 @@ input{
         height: fit-content;
     }
 
+    #button-subscribe{
+        margin-top: 1rem;
+    }
+
+    #subscribe{
+        background-color: hsl(248, 32%, 49%);
+        padding: 1.5rem 2.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        width: 90%;
+        color: white;
+    }
+
     #submit-button{
         background-color: hsl(154, 59%, 51%);
         padding: 1.5rem 2.5rem;
