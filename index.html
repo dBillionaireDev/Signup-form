@@ -14,10 +14,9 @@
 <link rel="stylesheet" href="styles.css">
   <title>Frontend Mentor | Intro component with sign up form</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution a { color: hsl(246, 25%, 77%); }
   </style>
 </head>
 <body>
@@ -33,17 +32,20 @@
       <button id="subscribe"><strong>Try it free 7 days</strong> then $20/mo. thereafter</button>
       </div>
 
+      <!-- Form Element -->
       <form id="form-container" action="get">
-        <input type="text" name="first-name" id="fname" placeholder="First Name">
-        <input type="text" name="last-name" id="lname" placeholder="Last Name">
-        <input type="email" name="email" id="email" placeholder="Email Address">
-        <input type="password" name="password" id="password" placeholder="Password"> 
+        <input type="text" name="first-name" id="fname" placeholder="First Name" required>
+        <input type="text" name="last-name" id="lname" placeholder="Last Name" required>
+        <input type="email" name="email" id="email" placeholder="Email Address" required>
+        <input type="password" name="password" id="password" placeholder="Password" required> 
 
-        <button id="submit-button" type="submit">Claim your free trial</button>
+        <button id="submit-button" type="submit"><strong>Claim your free trial</strong></button>
 
         <p style="color: hsl(246, 25%, 77%); font-size: 12px;">By clicking the button, you are agreeing to our <a href="#" style="color: hsl(0, 100%, 74%)"><strong>Terms and Services</strong></a></p> 
       </form> 
   </main>  
+
+  <!-- Footer Section -->
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
