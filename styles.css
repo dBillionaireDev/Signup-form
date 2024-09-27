@@ -8,19 +8,56 @@
 
 body{
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     color: white;
     background-image: url(/images/bg-intro-desktop.png);
     background-color: hsl(0, 100%, 74%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }   
 
-input{
-    display: block;
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: auto 3rem;
+    padding: auto 2rem; 
+}
+
+#form{
+    width: 100%;
+    margin: 3rem auto;
+    padding-right: 5rem;
+    text-align: center;
+}
+
+.container{
+    width: 90%;
+    margin: 3rem 0 4rem 2rem;
+    padding: 10rem 0.5rem 1rem 8rem;
+    font-weight: 600;
+}
+
+.container>h2{
+    margin-bottom: 1rem;
+    padding: auto 1rem;
+    font-size: 4rem;
+}
+
+#button-subscribe{
+    padding: 1rem;
     margin: auto;
-    border-radius: 5px;
+}
+
+#subscribe{
+    background-color: hsl(248, 32%, 49%);
+    padding: 1.5rem 2.5rem;
+    font-size: 1.2rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    width: 80%;
+    color: white;
+    box-shadow: 0 10px 0.5rem  rgba(0, 0, 0, 0.2);
 }
 
 #form-container{
@@ -29,15 +66,71 @@ input{
     margin: auto;
     border-radius: 10px;
     height: fit-content;
+    padding: 1.5rem 3rem;
+    height: fit-content;
+    box-shadow: 0 1rem 0.5rem  rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
 }
 
-@media (max-width: 480px) {
+input{
+    display: block;
+    margin: 1.3rem auto;
+    border-radius: 10px;
+    padding: 1.2rem;
+    width: 100%;
+    border-color: hsl(246, 25%, 77%);
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+::placeholder{
+    font-weight: 900;
+    font-size: 1.3rem;
+    padding-top: 1.5rem;
+}
+
+#submit-button{
+    background-color: hsl(154, 59%, 51%);
+    padding: 1.2rem 2.5rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    color: white;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+footer{
+    margin: auto auto 0.5rem;
+}
+
+.attribution { 
+    font-size: 16px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(246, 25%, 77%); 
+}
+
+/* Mobile Phones, Landscape */
+@media (min-width: 560px) and (max-width: 980px) and (orientation: landscape) {
     body{
         font-family: "Poppins", sans-serif;
         text-align: center;
-        background-image: url(/images/bg-intro-mobile.png);
+        background-image: url(/images/bg-intro-desktop.png);
         background-color: hsl(0, 100%, 74%);
     } 
+
+    main{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    #form{
+        padding-right: 0;
+    }
 
     .container{
         width: 90%;
@@ -104,5 +197,198 @@ input{
 
     footer{
         margin: 1.5rem auto 0.5rem;
+    }
+}
+
+/* Mobile Phones, Potrait */
+@media (max-width: 480px) {
+    body{
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        background-image: url(/images/bg-intro-mobile.png);
+        background-color: hsl(0, 100%, 74%);
+    } 
+
+    main{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    #form{
+        padding-right: 0;
+    }
+
+    .container{
+        width: 90%;
+        margin: 3rem auto 0;
+        padding: 1rem 0.5rem;
+        font-weight: 600;
+    }
+
+    .container>h2{
+        margin-bottom: 0;
+        padding: auto 1rem;
+        font-size: 2rem;
+    }
+
+    input{
+        display: block;
+        margin: auto;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        padding: 0.7rem;
+        width: 100%;
+        border-color: hsl(246, 25%, 77%);
+        font-weight: 400;
+    }
+    
+    ::placeholder{
+        font-weight: 900;
+        font-size: 1rem;
+    }
+
+    #form-container{
+        background-color: white;
+        width:  90%;
+        margin: auto;
+        padding: 1.5rem;
+        border-radius: 10px;
+        height: fit-content;
+        box-shadow: 0 1rem 0.5rem  rgba(0, 0, 0, 0.2);
+        margin-bottom: 0.5rem;
+    }
+
+    #button-subscribe{
+        margin-top: 1rem;
+    }
+
+    #subscribe{
+        background-color: hsl(248, 32%, 49%);
+        padding: 1.2rem 2.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        width: 90%;
+        color: white;
+        box-shadow: 0 10px 0.5rem  rgba(0, 0, 0, 0.2);
+    }
+
+    #submit-button{
+        background-color: hsl(154, 59%, 51%);
+        padding: 1.5rem 2.5rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        width: 100%;
+        color: white;
+        font-size: 1rem;
+    }
+
+    footer{
+        margin: 0 auto 0.5rem;
+    }
+
+    .attribution { 
+        font-size: 11px; 
+    }
+}
+
+/* Ipad and Tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+    body{
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        text-align: center;
+        background-image: url(/images/bg-intro-mobile.png);
+        background-color: hsl(0, 100%, 74%);
+    } 
+
+    main{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    #form{
+        padding-right: 0;
+    }
+    
+    .container{
+        width: 80%;
+        margin: 3rem auto 2rem;
+        padding: 1rem 0;
+        font-weight: 600;
+    }
+
+    .container>h2{
+        margin-bottom: 1rem;
+        padding: auto 1rem;
+        font-size: 4rem;
+    }
+
+    p{
+        font-size: 1.8rem;
+    }
+
+    input{
+        display: block;
+        margin: auto;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        padding: 1.8rem 1rem;
+        width: 100%;
+        border-color: hsl(246, 25%, 77%);
+        font-weight: 400;
+    }
+    
+    ::placeholder{
+        font-weight: 900;
+        font-size: 1.5rem;
+    }
+
+    #form-container{
+        background-color: white;
+        width:  80%;
+        margin: auto;
+        padding: 1.5rem;
+        border-radius: 10px;
+        height: fit-content;
+        box-shadow: 0 1rem 0.5rem  rgba(0, 0, 0, 0.2);
+        margin-bottom: 0.5rem;
+    }
+
+    #button-subscribe{
+        margin-top: 1rem;
+    }
+
+    #subscribe{
+        background-color: hsl(248, 32%, 49%);
+        padding: 1.5rem 2.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        width: 80%;
+        color: white;
+        box-shadow: 0 10px 0.5rem  rgba(0, 0, 0, 0.2);
+    }
+
+    #submit-button{
+        background-color: hsl(154, 59%, 51%);
+        padding: 1.5rem 2.5rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        width: 100%;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 900;
+    }
+
+    footer{
+        margin: 1.5rem auto 0.5rem;
+    }
+
+    .attribution{
+        font-weight: 600;
+        font-size: 1rem
     }
 }
