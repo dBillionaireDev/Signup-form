@@ -8,7 +8,7 @@ const lastName = document.getElementById("lname");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 
-form.addEventListener('keyUp', function(e) {
+form.addEventListener('submit', function(e) {
     e.preventDefault();
     
     checkInputs();
