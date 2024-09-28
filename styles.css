@@ -72,20 +72,64 @@ main{
     margin-bottom: 0.5rem;
 }
 
-input{
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.form-control input{
     display: block;
-    margin: 1.3rem auto;
+    margin: 0.3rem auto;
     border-radius: 10px;
     padding: 1.2rem;
     width: 100%;
     border-color: hsl(246, 25%, 77%);
     font-weight: 900;
-    font-size: 1.5rem;
+    font-size: 1rem;
+}
+
+.form-control.success input{
+    border-color: hsl(154, 59%, 51%);
+}
+
+.form-control.success i.fa-circle-check{
+    visibility:visible;
+}
+
+.form-control.error input{
+    border-color: hsl(0, 100%, 74%);
+}
+
+.form-control.error i.fa-circle-exclamation{
+    visibility:visible;
+}
+
+.form-control.error small{
+    visibility: visible;
+    color: hsl(0, 100%, 74%);
+}
+
+.form-control i{
+    visibility: hidden;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+}
+
+.form-control small{
+    visibility: hidden;
+    position: absolute;
+    font-size: 12px;
+    font-style: italic;
+    color: hsl(0, 100%, 74%);
+    bottom: 0;
+    right: 0;
 }
 
 ::placeholder{
     font-weight: 900;
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding-top: 1.5rem;
 }
 
@@ -97,7 +141,7 @@ input{
     width: 100%;
     color: white;
     font-weight: 900;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 footer{
@@ -276,12 +320,12 @@ footer{
 
     #submit-button{
         background-color: hsl(154, 59%, 51%);
-        padding: 1.5rem 2.5rem;
+        padding: 1.5rem 1.5rem;
         margin-bottom: 1rem;
         border-radius: 5px;
         width: 100%;
         color: white;
-        font-size: 1rem;
+        font-size: 0.8em;
     }
 
     footer{
