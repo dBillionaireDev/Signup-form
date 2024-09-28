@@ -2,73 +2,90 @@
 
 let submitButton = document.getElementById("submit-button").textContent=document.getElementById("submit-button").textContent.toUpperCase();
 
-document.getElementById("form-container").addEventListener('submit', function(e) {
+const form = document.getElementById("form-container")
+const firstName = document.getElementById("fname");
+const lastName = document.getElementById("lname");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+
+form.addEventListener('submit', function(e) {
     e.preventDefault();
-    let errors = [];
-
-    let firstName = document.getElementById("fname").value;
-    let lastName = document.getElementById("lname").value;
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-
-    let data = {
-        userName: firstName + " " + lastName,
-        email: email,
-        password: password
-    }
-    console.log(data);
-
-    if (firstName.length < 2) {
-        errors.push("Enter a valid name");
-    }
-
-    if (lastName.length < 2) {
-        errors.push("Enter a valid name");
-    }
-
-    if (firstName ===  "") {
-        errors.push("First Name cannot be empty");
-    }
-
-    if (lastName.length ==  "") {
-        errors.push("Last Name cannot be empty");
-    }
-
-    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (!emailPattern.test(email)) {
-        errors.push("Looks like this is not an email");
-    }
-
-    if (email.length === "") {
-        errors.push("Email cannot be empty");
-    }
-
-    if (password.length < 6) {
-        errors.push("Password must be at least 6 characters long");
-    }
-
-    if (errors.length > 0) {
-        document.getElementById("error").innerHTML = errors.join("<br>");
-        } else {
-            document.getElementById("error").innerHTML = "";
-            alert("Thank you for your message, " + firstName + "! We will get back to you as soon as possible.");
-            document.getElementById("form-container").reset();
-
-            fetch('/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            
-            })
-        }
     
+    checkInputs();
+});
+
+let data = {
+    userName: firstName.value + " " + lastName.value,
+    email: email.value,
+    password: password.value
+}
+
+console.log(data);
+
+
+const checkInputs = () => {
+    const firstNameValue = firstName.value.trim();
+    const lastNameValue = lastName.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+
+    if(firstNameValue === '') {
+        setErrorFor(firstName, 'First Name cannot be empty');
+    } else {
+        setSuccessFor(firstName);
+    }
+
+    if(lastNameValue === '') {
+        setErrorFor(lastName, 'Last Name cannot be empty');
+    } else {
+        setSuccessFor(lastName);
+    }
+
+    if(emailValue === '') {
+        setErrorFor(email, 'Email cannot be empty');
+    } else if(!emailPattern.test(emailValue)){
+        setErrorFor(email, 'Please input a valid email address');
+    } else {
+        setSuccessFor(email);
+    }
+
+    if(passwordValue === '') {
+        setErrorFor(password, 'Password cannot be empty');
+    } else {
+        setSuccessFor(password);
+    }
+}
+
+const  setErrorFor = (input, message) => {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+
+    small.innerText = message;
+
+    formControl.className = 'form-control error';
+}
+
+const setSuccessFor = input => {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+}
+
+const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+const passwordPattern = /^(?=.[0-9])(?=.[!@#$%^&])[a-zA-Z0-9!@#$%^&]{6,}$/;
+
+fetch('/submit', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+})
+.then(response => response.json(data))
+.then(data => {
+    console.log('Success:', data);
+})
+.catch((error) => {
+    console.error('Error:', error);
+
 })
