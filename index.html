@@ -6,6 +6,9 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/72a3f5eca0.js" crossorigin="anonymous"></script>
+
   <!-- Google Fonts  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,17 +33,41 @@
         </span>
 
         <!-- Form Element -->
-        <form id="form-container">
-          <input type="text" name="first-name" id="fname" placeholder="First Name" required>
-          <input type="text" name="last-name" id="lname" placeholder="Last Name" required>
-          <input type="email" name="email" id="email" placeholder="Email Address" required>
-          <input type="password" name="password" id="password" placeholder="Password" required> 
+        <form id="form-container" action="POST">
+
+          <div class="form-control">
+              <input type="text" name="first-name" id="fname" placeholder="First Name">
+              <i class="fa-solid fa-circle-check fa-xl" style="color: #63E6BE;"></i>
+              <i class="fa-solid fa-circle-exclamation fa-xl" style="color: #f20707;"></i>
+              <small> cannot be empty</small>
+            </div>  
+         
+            <div class="form-control">
+              <input type="text" name="last-name" id="lname" placeholder="Last Name">
+              <i class="fa-solid fa-circle-check fa-xl" style="color: #63E6BE;"></i>
+              <i class="fa-solid fa-circle-exclamation fa-xl" style="color: #f20707;"></i>
+              <small> cannot be empty</small>
+            </div>
+
+            <div class="form-control">
+              <input type="email" name="email" id="email" placeholder="Email Address">
+              <i class="fa-solid fa-circle-check fa-xl" style="color: #63E6BE;"></i>
+              <i class="fa-solid fa-circle-exclamation fa-xl" style="color: #f20707;"></i>
+              <small> cannot be empty</small>
+            </div>
+
+            <div class="form-control">
+              <input type="password" name="password" id="password" placeholder="Password"> 
+              <i class="fa-solid fa-circle-check fa-xl" style="color: #63E6BE;"></i>
+              <i class="fa-solid fa-circle-exclamation fa-xl" style="color: #f20707;"></i>
+              <small> cannot be empty</small>
+            </div>
 
           <button id="submit-button" type="submit"><strong>Claim your free trial</strong></button>
 
           <p style="color: hsl(246, 25%, 77%); font-size: 12px;">By clicking the button, you are agreeing to our <a href="#" style="color: hsl(0, 100%, 74%)"><strong>Terms and Services</strong></a></p> 
         </form> 
-        <div id="error"></div>
+     
       </div>
   </main>  
 
