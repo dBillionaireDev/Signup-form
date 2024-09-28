@@ -8,7 +8,7 @@ const lastName = document.getElementById("lname");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('keyUp', function(e) {
     e.preventDefault();
     
     checkInputs();
@@ -44,7 +44,7 @@ const checkInputs = () => {
     if(emailValue === '') {
         setErrorFor(email, 'Email cannot be empty');
     } else if(!emailPattern.test(emailValue)){
-        setErrorFor(email, 'Please input a valid email address');
+        setErrorFor(email, 'Email format should be (e.g name@host.ltd)');
     } else {
         setSuccessFor(email);
     }
