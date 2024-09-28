@@ -55,7 +55,7 @@ Mobile site
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
-- [JavaScript](https://www.udemy.com/course/the-complete-javascript-course/learn/lecture/22649007?start=15#overview) - Vanilla JS
+ [JavaScript](https://www.udemy.com/course/the-complete-javascript-course/learn/lecture/22649007?start=15#overview) - Vanilla JS
 
 ### What I learned
 
@@ -66,6 +66,8 @@ Form Validation.
 ### Useful resources
 
 - [Jonas Scmedtmann's JavaScript course on Udemy](https://www.udemy.com/course/the-complete-javascript-course/learn/lecture/22649007?start=15#overview) - This helped me in the DOM session. I really liked this pattern and will use it going forward. I'd recommend it to anyone still learning this concept.
+
+- [Florin Pop Form Validation video on YouTube](https://youtu.be/rsd4FNGTRBw?si=ckrbwipRwcJgmoJ4w)
 
 ## Author
 
